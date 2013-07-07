@@ -31,7 +31,7 @@ when "debian"
 
   dev_pkgs << "libicu-dev"
   dev_pkgs << "libcurl4-openssl-dev"
-  dev_pkgs << value_for_platform(
+  moz_dep = value_for_platform(
     "debian" => { "default" => "libmozjs-dev" },
     "ubuntu" => {
       "10.10" => "xulrunner-dev",
@@ -42,6 +42,8 @@ when "debian"
       "8.04" => "libmozjs-dev"
     }
   )
+  
+  dev_pkgs << moz_dep unless moz_dep.nil?
 
 when "rhel", "fedora"
   include_recipe "yum::epel"
