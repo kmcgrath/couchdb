@@ -34,7 +34,8 @@ when "debian"
   dev_pkgs << value_for_platform(
     "debian" => { "default" => "libmozjs-dev" },
     "ubuntu" => {
-      "default" => "xulrunner-dev",
+      "10.10" => "xulrunner-dev",
+      "10.04" => "xulrunner-dev",
       "9.10" => "libmozjs-dev",
       "9.04" => "libmozjs-dev",
       "8.10" => "libmozjs-dev",
